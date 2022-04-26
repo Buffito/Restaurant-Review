@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <br>
+    <div class="card">
+        <div class="card-body"> 
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="{{ restaurant.image }}" alt="{{ restaurant.name }}" class="img-fluid" style="width: 400px; height: 200px;">  
+                    <br><br>
+                    <h4 class="text-center"> {{ restaurant.name }} </h4>                  
+                </div>
+                <div class="col-md-8">
+                    <h7> {{ restaurant.description }} </h7>    
+                    <br>   
+                    <b>
+                    <i> {{ restaurant.address }} - Τηλ: {{ restaurant.phone }} </i> 
+                    <br><br> 
+                    <h7> Βαθμολογία: {{ restaurant.averageRating }}/10 </h7>  
+                    </b>
+                    <br><br>
+                    <a href="{% url 'main:edit_restaurant' restaurant.id %}" class="btn btn-warning">Επεξεργασία</a>
+                    <a href="{% url 'main:delete_restaurant' restaurant.id %}" class="btn btn-danger">Διαγραφή</a>
+                </div>              
+            </div>
+        </div>    
+    </div>
+<div>
+
+{% endblock  %} 
